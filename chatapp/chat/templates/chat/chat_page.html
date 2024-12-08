@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Chat{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'chat.css' %}" />
+{% endblock head %}
+{% block content %}
+<div id="wrapper">
+  <div id="message-container">
+    <div id="welcome-div">
+      <h1>Welcome, {{request.user}}</h1>
+      <a href="{% url 'logout' %}"><button id="logout-btn">Log out</button></a>
+    </div>
+
+
+    <div id="anchor"></div>
+  </div>
+  <footer>
+    <input type="text" id="msg-input" placeholder="Type your message...">
+  </footer>
+</div>
+<meta name="username" content="{{request.user.username}}" />
+<meta name="pfp" content="{% static 'pfp.png' %}" />
+<script src="{% static 'chat.js' %}"></script>
+{% endblock content %}

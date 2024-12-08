@@ -1,0 +1,99 @@
+#welcome-div {
+    text-align: center;
+}
+
+#welcome-div>h1 {
+    font-size: 45pt;
+    margin-bottom: 10px;
+}
+
+#logout-btn {
+    background-color: #313244;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #cdd6f4;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    filter: brightness(1.1);
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#message-container {
+    flex: 1;
+    overflow: auto;
+}
+#message-container * {
+    overflow-anchor: none;
+}
+#anchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
+#msg-input {
+    background-color: #181825;
+    outline: none;
+    border: none;
+    color: #cdd6f4;
+    padding: 10px;
+    margin: 10px;
+    flex-grow: 1;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#msg-input::placeholder {
+    color: #6c7086;
+}
+
+footer {
+    background: transparent;
+    display: flex;
+}
+
+.msg {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.name {
+    margin-right: 10px;
+    font-size: 1.05em;
+    user-select: none;
+}
+
+.time {
+    font-size: 0.9em;
+    color: #a6adc8;
+    user-select: none;
+}
+
+.msg-contents {
+    margin-top: 5px;
+}
+
+.msg::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.msg-inner {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.pfp {
+    float: left;
+    border-radius: 15px;
+    user-select: none;
+}
