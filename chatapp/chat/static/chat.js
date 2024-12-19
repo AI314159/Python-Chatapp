@@ -1,9 +1,11 @@
-const chat_socket = new WebSocket("ws://" + window.location.host + "/");
+const data = document.currentScript.dataset;
+const username = data.username;
+const pfp_path = data.pfp;
+const chat_socket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + data.serverid + "/");
 const msg_input = document.getElementById("msg-input");
 const message_container = document.getElementById("message-container");
 const overflow_anchor = document.getElementById("anchor");
-const username = document.querySelector("meta[name='username']").content;
-const pfp_path = document.querySelector("meta[name='pfp']").content
+
 chat_socket.onopen = function (e) {
     console.log("Websocket initialised!");
 }

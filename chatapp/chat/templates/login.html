@@ -4,16 +4,18 @@
 <link rel="stylesheet" href="{% static 'login.css' %}">
 {% endblock head %}
 {% block content %}
-<div id="login-container">
-    <h2>Sign in</h2>
-    <form method="post" id="login-form">
-        {% csrf_token %}
-        {% if error_message %}
-        <p id="error-message">{{error_message}}</p>
-        {% endif %}
-        <input name="username" id="username" placeholder="Username" type="text" autocomplete="off">
-        <input name="password" id="password" placeholder="Password" type="password">
-        <input name="login" id="login-btn" type="submit" value="Sign in">
-    </form>
+<main>
+    <div id="login-container">
+        <h2>Sign in</h2>
+        <form method="post" id="login-form">
+            {% csrf_token %}
+            {% if error_message %}
+            <p id="error-message">{{error_message}}</p>
+            {% endif %}
+            <input name="username" id="username" placeholder="Username" type="text" autocomplete="off">
+            <input name="password" id="password" placeholder="Password" type="password">
+            <input name="login" id="login-btn" type="submit" value="Sign in">
+        </form>
 </div>
+</main>
 {% endblock content %}

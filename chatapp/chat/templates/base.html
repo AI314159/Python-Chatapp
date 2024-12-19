@@ -13,6 +13,15 @@
 </head>
 
 <body>
+    {% if user.is_authenticated %}
+    <aside>
+        <ul>
+            {% for server in user.server_set.all %}
+            <li><a href="/server/{{server.id}}"><img src="{% static 'server.png' %}" /></a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    {% endif %}
     {% block content %}
     {% endblock %}
 </body>

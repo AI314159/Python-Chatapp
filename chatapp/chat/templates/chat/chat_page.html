@@ -20,7 +20,9 @@
     <input type="text" id="msg-input" placeholder="Type your message...">
   </footer>
 </div>
-<meta name="username" content="{{request.user.username}}" />
-<meta name="pfp" content="{% static 'pfp.png' %}" />
-<script src="{% static 'chat.js' %}"></script>
+<script src="{% static 'chat.js' %}"
+  data-username="{{request.user.username}}"
+  data-serverid="{{server_id}}"
+  data-pfp="{% static 'pfp.png' %}"
+></script>
 {% endblock content %}

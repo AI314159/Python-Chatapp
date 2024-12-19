@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock head %}
+
+{% block content %}
+<main>
+{% if user.is_authenticated %}
+<p>
+    Welcome, {{user.username}}, to the Catppuccin Chat application!
+</p>
+<p>
+    You can click on the servers to the left to get started. If you do
+    not see any servers, you can make a new one, or get an invitation.
+</p>
+{% else %}
+<p>Welcome to the Catppuccin chat application!</p>
+<p>You need to <a href="{% url 'login' %}">log in</a> before you can start chatting.</p>
+{% endif %}
+</main>
+{% endblock content %}
