@@ -13,6 +13,15 @@
       <a href="{% url 'logout' %}"><button id="logout-btn">Log out</button></a>
     </div>
 
+    {% for msg in messages %}
+    <div class="msg">
+      <img src="{% static 'pfp.png' %}" alt="pfp" class="pfp">
+      <div class="msg-inner">
+        <span class="name">{{msg.sender.username}}</span><span class="time">12:34</span>
+        <p class="msg-contents">{{msg.contents}}</p>
+      </div>
+    </div>
+    {% endfor %}
 
     <div id="anchor"></div>
   </div>

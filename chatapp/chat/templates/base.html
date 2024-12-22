@@ -19,6 +19,7 @@
             {% for server in user.server_set.all %}
             <li><a href="/server/{{server.id}}"><img src="{% static 'server.png' %}" /></a></li>
             {% endfor %}
+            <li><a href="{% url 'add-server' %}"><img src="{% static 'new_server.png' %}" /></a></li>
         </ul>
     </aside>
     {% endif %}

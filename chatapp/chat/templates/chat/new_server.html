@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div id="login-container">
+        <h2>New server</h2>
+        <form method="post" id="login-form">
+            {% csrf_token %}
+            {% if error_message %}
+            <p id="error-message">{{error_message}}</p>
+            {% endif %}
+            <input name="server_name" id="server_name" placeholder="Server Name" type="text" autocomplete="off">
+            <input name="members" id="members" placeholder="Users to add" type="textarea">
+            <input name="new" id="login-btn" type="submit" value="New">
+        </form>
+</div>
+</main>
+{% endblock content %}

@@ -26,6 +26,9 @@ aside >  ul > li {
     margin: 10px 0 0 0;
     list-style-type: none;
 }
+aside > ul > li > a {
+    display: block;
+}
 aside > ul > li > a > img {
     border-radius: 10px;
 }
