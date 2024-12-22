@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+{% load static %}
+{% comment %}
+test
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock head %}
+{% block content %}
+<main>
+    <div id="login-container">
+        <h2>Register</h2>
+        <form method="post" id="login-form">
+            {% csrf_token %}
+            {% if error_message %}
+            <p id="error-message">{{error_message}}</p>
+            {% endif %}
+            <input name="username" id="username" placeholder="Username" type="text" autocomplete="off">
+            <input name="password" id="password" placeholder="Password" type="password">
+            <input name="confirm_password" id="password" placeholder="Confirm Password" type="password">
+            <input name="login" id="login-btn" type="submit" value="Register">
+        </form>
+</div>
+</main>
+{% endblock content %}

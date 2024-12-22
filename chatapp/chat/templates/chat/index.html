@@ -17,7 +17,7 @@
 </p>
 {% else %}
 <p>Welcome to the Catppuccin chat application!</p>
-<p>You need to <a href="{% url 'login' %}">log in</a> before you can start chatting.</p>
+<p>You need to <a href="{% url 'login' %}">log in</a> or <a href="{% url 'register' %}">sign up</a> before you can start chatting.</p>
 {% endif %}
 </main>
 {% endblock content %}
