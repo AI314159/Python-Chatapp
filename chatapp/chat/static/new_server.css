@@ -1,0 +1,30 @@
+main {
+    padding: 40px;
+}
+
+#add-server-container {
+    margin: 0 auto;
+    min-width: fit-content;
+    max-width: 50%;
+    background-color: #313244;
+    padding: 10px;
+    border-radius: 20px;
+}
+#add-server-container > h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#new-server-form > input {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #45475a;
+    color: #fff;
+}
+#new-server-form > #new-btn {
+    color: #fff;
+}
