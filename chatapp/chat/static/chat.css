@@ -7,6 +7,10 @@
     margin-bottom: 10px;
 }
 
+a:has(> #logout-btn)::after {
+    content: none;
+}
+
 #logout-btn {
     background-color: #313244;
     border: none;
