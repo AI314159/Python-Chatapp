@@ -30,38 +30,48 @@ a:hover::after {
     transform: scaleX(1);
 }
 
-html,
+html {
+    height: 100%;
+}
 body {
     background-color: #1e1e2e;
     color: #cdd6f4;
     font-family: "JetBrainsMono NF", monospace;
     height: 100%;
     font-size: 14pt;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
 }
 
 aside {
+    display: flex;
+    flex-direction: column;
     background-color: #11111b;
-    display: block;
-    float: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 100%;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 10px;
+    min-width: fit-content;
+
+    /* Do NOT expand scrollbar. That would cause body to scroll */
+    overflow: auto;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
 }
 
-aside > ul > li {
-    margin: 10px 0 0 0;
-    list-style-type: none;
+aside > a {
+    margin-bottom: 10px;
 }
 
-aside > ul > li > a {
-    display: block;
-}
-
-/* Remove the custom underline for the server selector */
-aside > ul > li > a::after {
+aside > a::after {
     content: none;
 }
 
-aside > ul > li > a > img {
-    border-radius: 10px;
+aside > a > img {
+    border-radius: 15px;
+}
+
+main {
+    flex-grow: 1;
 }

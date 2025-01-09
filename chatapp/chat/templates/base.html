@@ -15,12 +15,10 @@
 <body>
     {% if user.is_authenticated %}
     <aside>
-        <ul>
             {% for server in user.user_members.all %}
-            <li><a href="/server/{{server.id}}"><img src="{% static 'server.png' %}" /></a></li>
+            <a href="/server/{{server.id}}"><img src="{% static 'server.png' %}" /></a>
             {% endfor %}
-            <li><a href="{% url 'add-server' %}"><img src="{% static 'new_server.png' %}" /></a></li>
-        </ul>
+            <a href="{% url 'add-server' %}"><img src="{% static 'new_server.png' %}" /></a>
     </aside>
     {% endif %}
     {% block content %}

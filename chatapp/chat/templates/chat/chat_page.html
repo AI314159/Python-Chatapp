@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{% static 'chat.css' %}" />
 {% endblock head %}
 {% block content %}
+<main>
 <div id="wrapper">
   <div id="message-container">
     <div id="welcome-div">
@@ -37,6 +38,7 @@
     <input type="text" id="msg-input" placeholder="Type your message...">
   </footer>
 </div>
+</main>
 <script src="{% static 'chat.js' %}"
   data-username="{{request.user.username}}"
   data-serverid="{{server_id}}"
