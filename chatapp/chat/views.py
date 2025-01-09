@@ -36,7 +36,7 @@ def chat_page(request, server_id):
     server = get_object_or_404(Server, id=server_id)
     if request.user in server.members.all():
         messages = Message.objects.filter(server=server)
-        context = {"server_id": server_id, "messages": messages}
+        context = {"server_id": server_id, "server": server, "messages": messages}
         return render(request, "chat/chat_page.html", context)
     else:
         raise Http404

@@ -74,6 +74,42 @@ footer {
     user-select: none;
 }
 
+.name.owner::after {
+    font-size: 0.9em;
+    content: "owner";
+    text-transform: uppercase;
+    display: inline-block;
+    background: #f38ba8;
+    color: #000;
+    margin-left: 5px;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+.name.mod::after {
+    font-size: 0.9em;
+    content: "mod";
+    text-transform: uppercase;
+    display: inline-block;
+    background: #cba6f7;
+    color: #000;
+    margin-left: 5px;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+.name.admin::after {
+    font-size: 0.9em;
+    content: "admin";
+    text-transform: uppercase;
+    display: inline-block;
+    background: #74c7ec;
+    color: #000;
+    margin-left: 5px;
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
 .time {
     font-size: 0.9em;
     color: #a6adc8;

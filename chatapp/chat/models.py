@@ -10,8 +10,12 @@ class Server(models.Model):
     # The owning user is deleted, the servers they own will also be deleted.
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_owner")
 
+    admins = models.ManyToManyField(User, related_name="user_admins", null=True, blank=True)
+
+    moderators = models.ManyToManyField(User, related_name="user_moderators", null=True, blank=True)
+
     # Keeps track of the members
-    members = models.ManyToManyField(User)
+    members = models.ManyToManyField(User, related_name="user_members")
 
     # The server name!
     title = models.CharField(max_length=32)

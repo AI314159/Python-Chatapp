@@ -17,7 +17,15 @@
     <div class="msg">
       <img src="{% static 'pfp.png' %}" alt="pfp" class="pfp">
       <div class="msg-inner">
-        <span class="name">{{msg.sender.username}}</span><span class="time">12:34</span>
+        {% if server.owner.username == msg.sender.username %}
+          <span class="name owner">{{msg.sender.username}}</span><span class="time">12:34</span>
+        {% elif msg.sender in server.moderators.all %}
+          <span class="name mod">{{msg.sender.username}}</span><span class="time">12:34</span>
+        {% elif msg.sender in server.admins.all %}
+          <span class="name admin">{{msg.sender.username}}</span><span class="time">12:34</span>
+        {% else %}
+          <span class="name">{{msg.sender.username}}</span><span class="time">12:34</span>
+        {% endif %}
         <p class="msg-contents">{{msg.contents}}</p>
       </div>
     </div>

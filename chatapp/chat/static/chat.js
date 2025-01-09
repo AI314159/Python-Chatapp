@@ -25,7 +25,7 @@ msg_input.onkeyup = function (e) {
         }
     }
 }
-function get_message_inner_html(username, message) {
+function get_message_inner_html(username, message, role) {
     // Returns the inner HTML for the message
     var outer_div = document.createElement("div");
     outer_div.classList.add("msg");
@@ -43,6 +43,11 @@ function get_message_inner_html(username, message) {
 
     var name_span = document.createElement("span");
     name_span.classList.add("name");
+    
+    if (role) {
+        name_span.classList.add(role);
+    }
+
     console.log(username);
     name_span.innerText = username;
     inner_div.appendChild(name_span);
@@ -62,7 +67,8 @@ function get_message_inner_html(username, message) {
 
 chat_socket.onmessage = function (e) {
     const data = JSON.parse(e.data);
-    var div = get_message_inner_html(data.username, data.message);
+    console.log(e.data);
+    var div = get_message_inner_html(data.username, data.message, data.role);
     message_container.insertBefore(div, anchor);
     if (data.username == username) {
         anchor.scrollIntoView({ behavior: "instant", block: "end" })
