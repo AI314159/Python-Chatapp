@@ -62,22 +62,22 @@ def promote(executer, server, args):
 def demote(executer, server, args):
     user_to_demote = User.objects.get(username=args[1])
     executer_privilege = get_privilege(executer, server)
-    demotee_privilege = get_privilege(user_to_promote, server)
+    demotee_privilege = get_privilege(user_to_demote, server)
     if executer_privilege > demotee_privilege \
             and demotee_privilege - 1 >= MEMBER \
             and demotee_privilege < OWNER:
-        set_privilege(user_to_promote, server, demotee_privilege - 1)
+        set_privilege(user_to_demote, server, demotee_privilege - 1)
 
 def admin(executer, server, args):
     new_admin = User.objects.get(username=args[1])
     executer_privilege = get_privilege(executer, server)
-    if executer_privilege < ADMIN or executer_privilege == OWNER:
+    if executer_privilege > ADMIN:
         set_privilege(new_admin, server, ADMIN)
 
 def mod(executer, server, args):
     new_moderator = User.objects.get(username=args[1])
     if get_privilege(new_moderator, server) != OWNER:
-        set_privilege(new_moderator, server, ADMIN)
+        set_privilege(new_moderator, server, MODERATOR)
 
 commands = {
     # Transfer ownership to a user
